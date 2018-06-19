@@ -4,14 +4,14 @@ function pagesmith_install(&$content)
 	\phpws\PHPWS_Core::initModClass('pagesmith', 'PS_Page.php');
 	\phpws\PHPWS_Core::initModClass('pagesmith', 'PS_Text.php');
 	$page = new PS_Page;
-	$page->setTitle('Welcome to phpWebSite!');
+	$page->setTitle('Welcome to Canopy!');
 	$page->template = 'text_only';
 	$page->front_page = 1;
 	$page->save();
 
 	$section = new PS_Text;
 	$section->pid = $page->id;
-	$section->content = '&lt;p&gt;Thank you for installing phpWebSite.
+	$section->content = '&lt;p&gt;Thank you for installing Canopy.
 	Its developers hope you enjoy it.&lt;/p&gt;&lt;p&gt;
 	The page you are reading was created under
 	&lt;a href=&quot;./index.php?module=pagesmith&amp;amp;aop=menu&amp;amp;authkey=be5c993fffbc1193e3763d43ef5b2c78&quot;&gt;PageSmith&lt;/a&gt;

@@ -5,9 +5,8 @@
    */
 
 $proper_name  = 'PageSmith';
-$version      = '1.10.0';
+$version      = '1.11.0';
 $import_sql   = true;
-$version_http = 'http://phpwebsite.appstate.edu/downloads/modules/pagesmith/check.xml';
 $about        = true;
 $priority     = 50;
 $dependency   = true;
