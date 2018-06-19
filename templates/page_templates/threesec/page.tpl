@@ -4,7 +4,7 @@
     </div>
     <div class="box-content">
         <div class="clearfix">
-            <!-- BEGIN block1 --><div id="threesec-block1" class="sectional-block pull-right">{block1}</div><!-- END block1 -->
+            <!-- BEGIN block1 --><div id="threesec-block1" class="sectional-block float-right">{block1}</div><!-- END block1 -->
             <div id="threesec-text1" class="block-edit" {text1_admin}>{text1}</div>
         </div>
         <div class="clearfix">
@@ -12,7 +12,7 @@
             <div id="threesec-text2" class="block-edit" {text2_admin}>{text2}</div>
         </div>
         <div class="clearfix">
-            <!-- BEGIN block3 --><div id="threesec-block3" class="sectional-block pull-right">{block3}</div><!-- END block3 -->
+            <!-- BEGIN block3 --><div id="threesec-block3" class="sectional-block float-right">{block3}</div><!-- END block3 -->
             <div id="threesec-text3" class="block-edit" {text3_admin}>{text3}</div>
         </div>
     </div>
