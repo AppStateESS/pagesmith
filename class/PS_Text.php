@@ -1,11 +1,13 @@
 <?php
+
 /**
  * @version $Id$
  * @author Matthew McNaney <mcnaney at gmail dot com>
  */
 \phpws\PHPWS_Core::initModClass('pagesmith', 'PS_Section.php');
 
-class PS_Text extends PS_Section {
+class PS_Text extends PS_Section
+{
 
     public function __construct($id = 0)
     {
@@ -54,15 +56,15 @@ class PS_Text extends PS_Section {
         $this->setSaved();
     }
 
-
-    public function getContent($view_mode = true, $fix_anchor=true)
+    public function getContent($view_mode = true, $fix_anchor = true)
     {
         if (empty($this->content)) {
             return null;
         }
 
         if ($view_mode) {
-            return \phpws\PHPWS_Text::parseTag(\phpws\PHPWS_Text::parseOutput($this->content, ENCODE_PARSED_TEXT, false, false, $fix_anchor));
+            return \phpws\PHPWS_Text::parseOutput($this->content,
+                            ENCODE_PARSED_TEXT, false, false, false);
         } else {
             return \phpws\PHPWS_Text::decodeText($this->content);
         }
