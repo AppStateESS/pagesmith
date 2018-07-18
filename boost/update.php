@@ -18,6 +18,19 @@ function pagesmith_update(&$content, $currentVersion)
 + Anchors are no longer "fixed".
 </pre>
 EOF;
+        case version_compare($currentVersion, '1.11.1', '<'):
+            $db = \phpws2\Database::getDB();
+            $tbl = $db->addTable('ps_page');
+            $tbl->addFieldConditional('template', 'text_only', '!=');
+            $tbl->addValue('template', 'text_only');
+            $db->update();
+            $content[] = <<<EOF
+<pre>
+1.11.1 Changes
+---------------
++ Removed template changing.
+</pre>
+EOF;
     } // end switch
 
     return true;
