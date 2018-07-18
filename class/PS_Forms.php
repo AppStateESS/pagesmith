@@ -83,18 +83,10 @@ class PS_Forms
 
         $template_list = $this->ps->getTemplateList();
 
-        $form->addSelect('template_list', $template_list);
-        $form->setMatch('template_list', $page->template);
-        $form->addSubmit('change_tpl', 'Change template');
-
         if ($page->id) {
             $form->addHidden('id', $page->id);
         }
 
-        if (empty($page->_tpl) || $page->_tpl->error) {
-            $this->ps->content = 'Unable to load page template.';
-            return;
-        }
         $form->addSubmit('submit', 'Save page');
         $form->setClass('submit', 'btn btn-success');
 
@@ -126,7 +118,7 @@ class PS_Forms
 
         // We wrap the textarea in a form just so ckeditor will allow use of the "Save" button.
         $modal = new \phpws2\Modal('edit-section', '<form><textarea id="block-edit-textarea"></textarea></form>', 'Edit text area');
-        $modal->addButton('<button id="save-page" class="btn btn-success">' . 'Save' . '</button>');
+        $modal->addButton('<button id="save-page" class="btn btn-success">Save</button>');
 
         $modal->setWidthPercentage(90);
         $tpl['CONTENT_MODAL'] = $modal->__toString();
