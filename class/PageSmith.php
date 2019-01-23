@@ -429,7 +429,7 @@ class PageSmith
         $this->page->title = & $post_title;
 
         if (empty($this->page->title)) {
-            $this->page->title = dgettext('pagesmith', '(Untitled)');
+            $this->page->title = '(Untitled)';
         }
 
         $this->page->loadSections(true, false);
