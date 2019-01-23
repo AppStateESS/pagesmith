@@ -401,15 +401,15 @@ class PS_Page
 
         $key = new \Canopy\Key($this->key_id);
         $shortcut = new Access_Shortcut;
-        $shortcut->setUrl($key->module, $key->url);
-
-        $shortcut = new Access_Shortcut;
-        $shortcut->setUrl('pagesmith', $key->url);
-
-        $result = $shortcut->setKeyword($this->title);
-        if (PHPWS_Error::isError($result) || $result == FALSE) {
-            return $result;
+        $shortcut_title = $this->title;
+        try {
+            $shortcut->plugShortcut($shortcut_title, $this->key_id);
+        } catch (\Exception $e) {
+            $shortcut_title = $shortcut_title . '-' . time();
+            $shortcut->plugShortcut($shortcut_title, $this->key_id);
         }
+        $shortcut->setUrl('pagesmith', $key->url);
+        
         $result = $shortcut->save();
         if (PHPWS_Error::isError($result) || $result == FALSE) {
             return $result;

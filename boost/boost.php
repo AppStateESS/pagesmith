@@ -5,7 +5,7 @@
    */
 
 $proper_name  = 'PageSmith';
-$version      = '1.11.1';
+$version      = '1.11.2';
 $import_sql   = true;
 $about        = true;
 $priority     = 50;

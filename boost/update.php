@@ -31,6 +31,14 @@ EOF;
 + Removed template changing.
 </pre>
 EOF;
+        case version_compare($currentVersion, '1.11.2', '<'):
+            $content[] = <<<EOF
+<pre>
+1.11.2 Changes
+---------------
++ Added fix for duplicate shortcuts.
+</pre>
+EOF;
     } // end switch
 
     return true;
